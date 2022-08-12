@@ -1,0 +1,101 @@
+<div class="container mt-4 mb-4">
+    <form [formGroup]="form">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title" *ngIf="!empleado.id else TitleBlock">{{titleCreate}}</h3>
+                <ng-template #TitleBlock>
+                    <h3 class="card-title" >{{titleUpdate}}</h3>
+                </ng-template>
+            </div>
+            <div class="card-body">
+                <div class="form-group row mb-3">
+                    <label for="nombre" class="col-form-label col-sm-2">Nombre</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="nombre" id="nombre" formControlName="nombre" [(ngModel)]="empleado.nombre" [ngClass]="{'is-invalid': submitted && f['nombre'].errors}">
+                        <div *ngIf="submitted && f['nombre'].errors" class="invalid-feedback">
+                            <div *ngIf="f['nombre'].errors['required']">Nombre Requerido.</div>
+                            <div *ngIf="f['nombre'].errors['minlength']">Nombre debe tener al menos dos caracteres.</div>
+                            <div *ngIf="f['nombre'].errors['maxlength']">Nombre excede el largo máximo permitido (50).</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <label for="apellido" class="col-form-label col-sm-2">Apellido</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="apellido" id="apellido" formControlName="apellido" [(ngModel)]="empleado.apellido" [ngClass]="{'is-invalid': submitted && f['apellido'].errors}">
+                        <div *ngIf="submitted && f['apellido'].errors" class="invalid-feedback">
+                            <div *ngIf="f['apellido'].errors['required']">Apellido Requerido.</div>
+                            <div *ngIf="f['apellido'].errors['minlength']">Apellido debe tener al menos dos caracteres.</div>
+                            <div *ngIf="f['apellido'].errors['maxlength']">Apellido excede el largo máximo permitido (50).</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <label for="email" class="col-form-label col-sm-2">Email</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="email" id="email" formControlName="email" [(ngModel)]="empleado.email" [ngClass]="{'is-invalid': submitted && f['email'].errors}">
+                        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                            <div *ngIf="f['email'].errors['required']">Email Requerido.</div>
+                            <div *ngIf="f['email'].errors['pattern']">Formato ingresado no es válido.</div>
+                            <div *ngIf="f['email'].errors['maxlength']">Email excede el largo máximo permitido (255).</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <label for="Genero" class="col-form-label col-sm-2">Genero</label>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="genero" id="femenino" value="femenino" formControlName="genero" [(ngModel)]="empleado.genero" checked>
+                            <label class="form-check-label" for="femenino">Femenino</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="genero" id="masculino" value="masculino" formControlName="genero" [(ngModel)]="empleado.genero">
+                            <label class="form-check-label" for="masculino">Masculino</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <label for="cargo" class="col-form-label col-sm-2">Cargo</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="cargo" id="cargo" formControlName="cargo" [(ngModel)]="empleado.cargo" [ngClass]="{'is-invalid': submitted && f['cargo'].errors}">
+                        <div *ngIf="submitted && f['cargo'].errors" class="invalid-feedback">
+                            <div *ngIf="f['cargo'].errors['required']">Cargo Requerido.</div>
+                            <div *ngIf="f['cargo'].errors['minlength']">Cargo debe tener al menos 2 caracteres.</div>
+                            <div *ngIf="f['cargo'].errors['maxlength']">Email excede el largo máximo permitido (255).</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <label for="sueldo" class="col-form-label col-sm-2">Sueldo</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" name="sueldo" id="sueldo" formControlName="sueldo" [(ngModel)]="empleado.sueldo" [ngClass]="{'is-invalid': submitted && f['sueldo'].errors}" >
+                        <div *ngIf="submitted && f['sueldo'].errors" class="invalid-feedback">
+                            <div *ngIf="f['sueldo'].errors['required']">Sueldo Requerido.</div>
+                            <div *ngIf="f['sueldo'].errors['min']">Sueldo debe ser mayor a 0.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <label for="fechaContrato" class="col-form-label col-sm-2">Fecha Contrato</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" name="fechaContrato" id="fechaContrato" formControlName="fechaContrato" [(ngModel)]="empleado.fechaContrato" [ngClass]="{'is-invalid': submitted && f['fechaContrato'].errors}">
+                        <div *ngIf="submitted && f['fechaContrato'].errors" class="invalid-feedback">
+                            <div *ngIf="f['fechaContrato'].errors['required']">Fecha contrato Requerida.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="form-group row text-center">
+                    <div class="col">
+                        <button type="button" (click)="onSubmit()" class="btn btn-lg btn-outline-primary m-2">Crear</button>
+                        <button type="button" (click)="onReset()" class="btn btn-lg btn-outline-secondary m-2">Limpiar</button>
+                        <button type="button" routerLink="/empleados" class="btn btn-lg btn-outline-danger m-2">Volver</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+

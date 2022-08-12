@@ -1,0 +1,75 @@
+<div class="container mt-4 mb-4 bg-dark text-white text-white py-3 rounded">
+    <div class="row align-middle">
+        <div class="col-md-6 align-middle">
+            <h1>{{ titulo }}</h1>
+            <h5 class="text-muted">Se han encontrado {{ empleados.length }} {{ empleados.length == 1 ? " registro" : " registros"}}</h5>
+        </div>
+        <div class="col-md-6 text-end align-middle">
+            <button class="btn btn-outline-primary " type="button" [routerLink]="['/empleados/formulario']">
+                <span class="fs-1">
+                    <i class="fas fa-plus fas fa-person"></i>
+                </span>
+            </button>
+        </div>
+    </div>
+</div>
+<div *ngIf="empleados.length > 0; else NoHayEmpleados" class="container mt-4 mb-4">
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th (click)="ordenarListadoEmpleados('id')">ID</th>
+                    <th (click)="ordenarListadoEmpleados('nombre')">Nombre</th>
+                    <th (click)="ordenarListadoEmpleados('apellido')">Apellido</th>
+                    <th (click)="ordenarListadoEmpleados('email')">Email</th>
+                    <th (click)="ordenarListadoEmpleados('genero')">Genero</th>
+                    <th (click)="ordenarListadoEmpleados('cargo')">Cargo</th>
+                    <th (click)="ordenarListadoEmpleados('sueldo')">Sueldo</th>
+                    <th (click)="ordenarListadoEmpleados('fechaContrato')">Fecha Contrato</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="align-middle" *ngFor="let empleado of empleados | orderList : optionSort.property: optionSort.order">
+                    <td>{{empleado.id}}</td>
+                    <td>{{empleado.nombre}}</td>
+                    <td>{{empleado.apellido}}</td>
+                    <td>{{empleado.email}}</td>
+                    <td>{{empleado.genero | truncateLetter:1:'' | uppercase }}</td>
+                    <td>{{empleado.cargo}}</td>
+                    <td>{{empleado.sueldo | currency:'CLP':'symbol-narrow':'1.0-0'}}</td>
+                    <td>{{empleado.fechaContrato | date: 'dd-MMM-yyyy'}}</td>
+                    <td>
+                        <div class="row">
+                            <div class="col-md-6 text-center mb-1">
+                                <button class="btn btn-outline-warning">
+                                    <i class="fas fa-pen"></i>
+                                </button>
+                            </div>
+                            <div class="col-md-6 text-center mb-1">
+                                <button class="btn btn-outline-danger">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<ng-template #NoHayEmpleados>
+    <div class="container mt-4 mb-4 py-4 rounded">
+        <div class="card">
+            <div class="card-header text-center">
+                <span class="text-warning fs-1">
+                    <i class="fas fa-exclamation"></i>
+                </span>
+            </div>
+            <div class="card-body text-center">
+                <h5 class="card-title">Actualmente no hay datos para mostrar...</h5>
+            </div>
+        </div>
+    </div>
+</ng-template>

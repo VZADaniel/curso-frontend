@@ -1,0 +1,12 @@
+insert into empleados (nombre, apellido, email, genero, sueldo, cargo, fecha_contrato) values ('Esteban', 'Dido', 'esteban.dido@gmail.com', 'masculino', 2500000 , 'Ingeniero en Desarrollo','2022-02-13');
+insert into empleados (nombre, apellido, email, genero, sueldo, cargo, fecha_contrato) values ('Aquiles', 'Bailo', 'aquiles.bailo@gmail.com', 'masculino', 2000000, 'Ingeniero en Desarrollo', '2020-05-11');
+insert into empleados (nombre, apellido, email, genero, sueldo, cargo, fecha_contrato) values ('Susana', 'Oria', 'susana.oria@gmail.com', 'femenino', 2500000, 'Ingeniera en Desarrollo', '2021-05-06');
+insert into empleados (nombre, apellido, email, genero, sueldo, cargo, fecha_contrato) values ('Elba', 'Lazo', 'elba.lazo@gmail.com', 'femenino', 1500000, 'Analista de Sistema', '2017-08-09');
+insert into empleados (nombre, apellido, email, genero, sueldo, cargo, fecha_contrato) values ('Armando', 'Mochas', 'armando.mochas@gmail.com', 'masculino', 1500000, 'Automatizador de pruebas', '2016-10-19');
+insert into empleados (nombre, apellido, email, genero, sueldo, cargo, fecha_contrato) values ('Rosamel', 'Fierro', 'rosamelfierro@gmail.com', 'femenino', 2000000, 'Ingeniero en Desarrollo','2016-12-24');
+insert into empleados (nombre, apellido, email, genero, sueldo, cargo, fecha_contrato) values ('Elvis', 'Tek', 'elvis.tek@gmail.com', 'masculino', 3500000, 'Jefe de Proyectos', '2016-12-24');
+insert into empleados (nombre, apellido, email, genero, sueldo, cargo, fecha_contrato) values ('Luz', 'Rojas', 'luz.rojas@gmail.com', 'femenino', 1500000, 'Automatizador de pruebas', '2016-12-24');
+insert into empleados (nombre, apellido, email, genero, sueldo, cargo, fecha_contrato) values ('Elmer', 'Nigote', 'elmer.nigote@gmail.com', 'masculino', 2500000, 'Ingeniero en Desarrollo', '2016-12-24');
+insert into empleados (nombre, apellido, email, genero, sueldo, cargo, fecha_contrato) values ('Elba', 'Zurita', 'elba.zurita@gmail.com', 'femenino', 2500000, 'Ingeniero en Desarrollo', '2016-12-24');
+insert into empleados (nombre, apellido, email, genero, sueldo, cargo, fecha_contrato) values ('Elsa', 'Capunta', 'elsacapuntaS@gmail.com', 'femenino', 2500000, 'Ingeniero en Desarrollo', '2016-12-24');
+insert into empleados (nombre, apellido, email, genero, sueldo, cargo, fecha_contrato) values ('Pepito', 'Pepón', 'pepitopepon@gmail.com', 'masculino', 2500000, 'Ingeniero en Desarrollo', '2022-02-14');

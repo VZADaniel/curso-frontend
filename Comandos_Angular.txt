@@ -1,0 +1,56 @@
+nodnop 1.- Para obtener la versión npm
+npm -versión
+
+2.- Para obtener la versión de Node
+node -v
+
+3.- Para obtener la versión de Angular
+ng v
+--Dato rosa: ng significa ANGULAR
+
+4.- Para instalar Angular CLI
+npm install -g @angular/cli
+
+5.- Para instalar la próxima versión de Angular CLI
+npm install @angular/cli@next
+
+6.- Para obtener ayuda en la terminal
+ng help
+
+7.1.- Para crear un nuevo proyecto en Angular (preguntará algunas cosas)
+ng new nombre_proyecto
+
+7.2.- Para crear un nuevo proyecto en Angular indicando los parametros
+ng new nuevo_proyecto --routing --style=css
+
+8.- Para omitir dependencias externas al crear un nuevo proyecto
+ng new nuevoproyecto --skip-install
+
+9.1.- Para ejecutar el proyecto Angular
+ng serve 
+ng s
+
+9.2.- Para lanzar el proyecto en otro puerto, esto nos permite levantar múltiples proyectos al mismo tiempo
+ng s --port=[numero de puerto]
+
+9.3.- Para lanzar el proyecto y pueda ser "visto" dentro de una red local
+ng s --host=0.0.0.0 --port=4100
+--Luego buscar tu ip y en el celular simplemente poner la [ip]:puerto
+
+10.- Para recuperar la carpeta node_module
+npm install
+
+11.- Para agregar COMPONENTS en un proyecto
+ng generate component [nombre_carpeta]/nombreComponente
+ng g c [nombre_carpeta]/nombreComponente
+
+12.- Para agregar SERVICES en un proyecto
+ng generate service [nombre_carpeta]/nombreServicio
+ng g s [nombre_carpeta]/nombreServicio
+
+13.- Para agregar PIPES en un proyecto
+ng generate pipes [nombre_carpeta]/nombrePipe
+ng g p [nombre_carpeta]/nombrePipe
+
+
+
