@@ -18,7 +18,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { registerLocaleData } from '@angular/common';
 import localeES from '@angular/common/locales/es-CL';
 
-registerLocaleData(localeES,'es');
+import { environment } from 'src/environments/environment';
+import { AuthModule } from '@auth0/auth0-angular';
+import { AuthButtonComponent } from './components/auth-button/auth-button.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+
+registerLocaleData(localeES, 'es');
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -32,6 +37,8 @@ registerLocaleData(localeES,'es');
 		OrderListPipe,
 		TruncateLetterPipe,
 		FormularioComponent,
+		AuthButtonComponent,
+		UserProfileComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -39,6 +46,7 @@ registerLocaleData(localeES,'es');
 		HttpClientModule,
 		ReactiveFormsModule,
 		FormsModule,
+		AuthModule.forRoot(environment.auth0),
 	],
 	providers: [{ provide: LOCALE_ID, useValue: 'es-CL' }],
 	bootstrap: [AppComponent],

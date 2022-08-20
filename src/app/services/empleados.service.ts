@@ -53,8 +53,8 @@ export class EmpleadosService {
     );
   }
 
-  deleteEmpleado(id: number): Observable<Empleado> {
-    return this.http.delete<Empleado>(`${this.urlEndPoint}/${id}`, {headers: this.httpHeaders}).pipe(
+  deleteEmpleado(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.urlEndPoint}/${id}`, {headers: this.httpHeaders}).pipe(
       catchError(e => {
         console.error(e.error.mensaje);
         Swal.fire(e.error.mensaje,e.error.error,'error');

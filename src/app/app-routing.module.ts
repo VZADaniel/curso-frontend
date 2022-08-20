@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '@auth0/auth0-angular';
 import { EmpleadosComponent } from './components/empleados/empleados.component';
 import { FormularioComponent } from './components/empleados/formulario/formulario.component';
 import { HomeComponent } from './components/home/home.component';
@@ -10,23 +11,31 @@ const routes: Routes = [
 	{
 		path: '',
 		title: 'Home',
-		component: HomeComponent,
+		component: HomeComponent
 	},
 	{ path: 'home', redirectTo: '' },
 	{
 		path: 'starwars',
 		title: 'Star Wars',
-		component: StarwarsComponent,
+		component: StarwarsComponent
 	},
 	{
 		path: 'empleados',
 		title: 'Empleados',
 		component: EmpleadosComponent,
+		canActivate: [AuthGuard]
 	},
 	{
 		path: 'empleados/formulario',
-		title: 'Empleados',
+		title: 'Empleados | Agregar',
 		component: FormularioComponent,
+		canActivate: [AuthGuard]
+	},
+	{
+		path: 'empleados/formulario/:id',
+		title: 'Empleados | Editar',
+		component: FormularioComponent,
+		canActivate: [AuthGuard]
 	},
 	{
 		path: '404',

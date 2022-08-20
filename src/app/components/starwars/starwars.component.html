@@ -1,5 +1,5 @@
 <div class="container my-4">
-	<div class="row py5 mb-4 bg-dark text-warning rounded">
+    <div class="row py-5 mb-4 bg-dark text-warning rounded">
 		<div class="col-md-6 ">
             <img class="img-fluid" src="../../../assets/img/Star_Wars_Logo.png" alt="Logo StarWars">
         </div>
@@ -7,19 +7,21 @@
             <h1 class="text-center align-middle">Personajes Star Wars</h1>
         </div>
 	</div>
-	<div class="row row-cols-1 row-cols-md-3 g-4" *ngFor="let personaje of people">
-		<div class="card h-100">
-			<img src="{{personaje.image}}" class="card-img-top" alt="{{personaje.name}}">
-			<div class="card-body">
-				<h4 class="card-title">{{personaje.name | uppercase}}</h4>
-				<p>Edad: {{personaje.mass | titlecase}}</p>
-				<p>Altura: {{personaje.height | titlecase}}</p>
-				<p>Color de Pelo: {{personaje.hair_color | titlecase}}</p>
-				<p>Color de Piel: {{personaje.skin_color | titlecase}}</p>
-				<p>Color de Ojos: {{personaje.eye_color | titlecase}}</p>
-			</div>
-			<div class="card-footer">
-				<p class="card-text fst-italic">Más info <a href="#">Wiki</a></p>
+	<div class="row row-cols-1 row-cols-md-3 g-4"> >
+		<div *ngFor="let personaje of people" class="col">
+			<div class="card h-100">
+				<img src="{{personaje.image}}" class="card-img-top" alt="{{personaje.name}}">
+				<div class="card-body">
+					<h4 class="card-title">{{personaje.name | uppercase}}</h4>
+					<p>Edad: {{personaje.mass | titlecase}}</p>
+					<p>Altura: {{personaje.height | titlecase}}</p>
+					<p>Color de Pelo: {{personaje.hair_color | titlecase}}</p>
+					<p>Color de Piel: {{personaje.skin_color | titlecase}}</p>
+					<p>Color de Ojos: {{personaje.eye_color | titlecase}}</p>
+				</div>
+				<div class="card-footer">
+					<p class="card-text fst-italic">Más info <a href="#">Wiki</a></p>
+				</div>
 			</div>
 		</div>
 	</div>

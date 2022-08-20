@@ -164,7 +164,7 @@ public class EmpleadoRestController {
 
 		if (empleado == null) {
 			response.put("mensaje",
-					"No se puede editar. El empleado ID: " + id + " no se encuentra en nuestros registros.");
+					"No se puede eliminar. El empleado ID: " + id + " no se encuentra en nuestros registros.");
 
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
 		}
